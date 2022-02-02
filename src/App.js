@@ -3,12 +3,13 @@ import './App.css';
 import validator from 'validator'
 
 function App() {
-
-  const [signupInput, setSignInput] = useState({
-    email: '',
-    password: '',
-    confirmPassword: ''
-  })
+  const [signupInput, setSignInput] = useState(
+    {
+      email: '',
+      password: '',
+      confirmPassword: ''
+    }
+  )
   const [error, setError] = useState('')
 
   const handleChange = (event) => {
@@ -30,27 +31,27 @@ function App() {
   }
   return (
     <div className="App">
-      <form>
-        <div>
+      <form className='form'>
+        <div className='row'>
           <label htmlFor='email'>
             Email adress
           </label>
-          <input type='email' id='email' name='email' value={signupInput.email} onChange={handleChange} />
+          <input className='input' type='email' id='email' name='email' value={signupInput.email} onChange={handleChange} />
         </div>
-        <div>
+        <div className='row'>
           <label htmlFor='password'>
             Password
           </label>
-          <input type='password' id='password' name='password' value={signupInput.password} onChange={handleChange} />
+          <input className='input' type='password' id='password' name='password' value={signupInput.password} onChange={handleChange} />
         </div>
-        <div>
+        <div className='row'>
           <label htmlFor='confirmPassword'>
             Confirm password
           </label>
-          <input type='password' id='confirmPassword' name='confirmPassword' value={signupInput.confirmPassword} onChange={handleChange} />
+          <input className='input' type='password' id='confirmPassword' name='confirmPassword' value={signupInput.confirmPassword} onChange={handleChange} />
         </div>
-        {error && <p>{error}</p>}
-        <button type='submit' onClick={handleClick}>Submit</button>
+        {error && <p className='error'>{error}</p>}
+        <button className='btn' type='submit' onClick={handleClick}>Submit</button>
       </form>
     </div>
   );
