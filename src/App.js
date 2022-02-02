@@ -28,6 +28,9 @@ function App() {
     else if (signupInput.password !== signupInput.confirmPassword) {
       return setError("the passwords don't match. Try again")
     }
+    else {
+      return setError('')
+    }
   }
   return (
     <div className="App">
